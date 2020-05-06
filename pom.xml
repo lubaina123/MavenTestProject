@@ -42,7 +42,7 @@
           			<configuration>
             				<archive>
               					<manifest>
-                					<mainClass>java.calculator.App</mainClass>
+                					<mainClass>com.calculator.Calculator</mainClass>
               					</manifest>
 					</archive>
           			</configuration>
