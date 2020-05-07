@@ -4,54 +4,33 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
+		System.out.println("6 + 3 = " + add(6, 3));
+		System.out.println("6 - 3 = " + subtract(6,3));
+		System.out.println("6 * 3 = " + multiply(6,3));
+		System.out.println("6 / 3 = " + divide(6,3));
+	}
 
-    	double num1, num2;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter first number:");
+	public static int add(int a, int b) {
+		return a + b;
+	}
+	
+	public static int subtract(int a, int b) {
+		return a - b;
+	}
 
-        /* We are using data type double so that user
-         * can enter integer as well as floating point
-         * value
-         */
-        num1 = scanner.nextDouble();
-        System.out.print("Enter second number:");
-        num2 = scanner.nextDouble();
+	public static long multiply(int a, int b) {
+		return a * b;
+	}
 
-        System.out.print("Enter an operator (+, -, *, /): ");
-        char operator = scanner.next().charAt(0);
-
-        scanner.close();
-        double output;
-
-        switch(operator)
-        {
-            case '+':
-            	output = num1 + num2;
-                break;
-
-            case '-':
-            	output = num1 - num2;
-                break;
-
-            case '*':
-            	output = num1 * num2;
-                break;
-
-            case '/':
-            	output = num1 / num2;
-                break;
-
-            /* If user enters any other operator or char apart from
-             * +, -, * and /, then display an error message to user
-             * 
-             */
-            default:
-                System.out.printf("You have entered wrong operator");
-                return;
-        }
-
-        System.out.println(num1+" "+operator+" "+num2+": "+output);
-    }
+	public static double divide(int a, int b) {
+		double result;
+		if (b == 0) {
+			throw new IllegalArgumentException("Divisor cannot divide by zero");
+		} else {
+			result = Double.valueOf(a)/Double.valueOf(b);
+		}
+		return result;
+	}
 
 }
